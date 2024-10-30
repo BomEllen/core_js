@@ -1,3 +1,5 @@
-const a = 'hello';
+//alert('경고!!!!!!!!!');
 
-const a = 'hello';
+// confirm('정말 지워....?')
+
+// prompt('당신은 잘 생겼습니까.')
