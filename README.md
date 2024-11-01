@@ -35,8 +35,8 @@
 ---
 ## Condition
 - [x] Condition (if조건문) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/09-1.conditions.js)
-- [ ] Condition (논리연산자) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/09-2.conditions.js)
-- [ ] Condition (switch..case) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/09-3.conditions.js)
+- [x] Condition (논리연산자) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/09-2.conditions.js)
+- [x] Condition (switch..case) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/09-3.conditions.js)
 - [ ] Condition (nullish) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/09-4.conditions.js)
 
 

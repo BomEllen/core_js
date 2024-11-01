@@ -48,35 +48,41 @@ let whichTruthy = false || '' || [2,3].length || {thisIsTruthy:true};
 console.clear();
 
 
-let userName = prompt('누구십니까?');
 
+function login(){
 
-if(userName.toLowerCase() === 'admin'){
-  
-  let password = prompt('비밀번호를 입력해주세요');
+  let userName = prompt('누구십니까?');
 
+  // if(userName === null || userName === undefined) return 
+  // if(!userName) return 
 
-  if(password.toUpperCase() === 'MASTER'){
-    console.log( '로그인 성공' );
+  if(userName.toLowerCase() === 'admin'){
     
-  }else if(password === null){
+    let password = prompt('비밀번호를 입력해주세요');
+
+    if(password.toUpperCase() === 'MASTER'){
+      console.log( '로그인 성공' );
+      
+    }else if(password === null){
+      console.log('취소됐습니다.');
+
+    }else{
+      console.log('잘못된 정보를 입력하셨습니다.');
+      login()
+    }
+  }
+  else if(userName === null || userName.replace(/\s*/g,'') === ''){
     console.log('취소됐습니다.');
 
-  }else{
-    console.log('잘못된 정보를 입력하셨습니다.');
-    
   }
-  
-}else if(userName === null){
-  console.log('취소됐습니다.');
+  else{
+    console.log('제대로된 값을 입력해주세요');
+  }
 
-}else{
-  console.log('제대로된 값을 입력해주세요');
 }
 
 
-
-
+login()
 
 
 
