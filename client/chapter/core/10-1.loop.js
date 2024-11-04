@@ -52,15 +52,17 @@ while( i < frontEndDev.length ){
 }
 
 
+
+
 let l = frontEndDev.length - 1;
 
 while( l >= 0) {
   let value = frontEndDev[l];
 
-  value.toUpperCase()
-
-  console.log( l );
   
+  console.log( value.toUpperCase() );
+  
+  // console.log( l );
   
   l--;
 }
