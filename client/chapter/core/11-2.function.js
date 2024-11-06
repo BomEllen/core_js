@@ -162,14 +162,14 @@ cb(
 
 
 
-a(1)
+// a(1)
 
 
 
-function a(a){
-  console.log( a );
+// function a(a){
+//   console.log( a );
   
-}
+// }
 
 
 
@@ -223,26 +223,22 @@ movePage(
 
 function getGeolocation(success,fail){
 
+
   
-  let data;
-
-
   navigator.geolocation.getCurrentPosition((so)=>{
-    success(so.coords.latitude)
+    const data = so.coords.latitude;
+    success(data);
+    
   })
-  return data 
+
 }
 
 
 
-getGeolocation(
-  (data)=>{
-    console.log(data);
-  },
-  ()=>{
-    
-  }
-)
+// getGeolocation(function(value){
+//   console.log( value );
+  
+// })
 
 
 
@@ -251,6 +247,8 @@ getGeolocation(
 
 
 
+
+console.clear()
 
 
 
@@ -263,6 +261,97 @@ getGeolocation(
 // 즉시 실행 함수 (표현)식
 // Immediately Invoked Function Expression
 let IIFE;
+
+
+// 함수가 선언됨과 동시에 실행되는 것을 말합니다.
+
+// var는 블록 스코프 : x
+// var는 함수 스코프 : o
+
+// encapsulation (캡슐화)
+
+
+// 모듈 프로그래밍 => import export
+// import { css } from "./css.js";
+
+
+
+const MASTER = (function(g){
+
+
+  console.log(g);
+  
+
+  var uuid = 'asdkjfxzc!@4ja8QKEAnqw^@';
+
+
+  return {
+    getKey(){
+      return uuid
+    },
+    setKey(value){
+      uuid = value
+    }
+  }
+  
+
+})(window);
+
+
+
+
+
+
+const css = (function(){
+
+  function setCss(node,prop,value){
+    
+    if(typeof node === 'string') node = document.querySelector(node);
+
+    if(!(prop in document.body.style)) throw new ReferenceError('setCss 함수의 두 번째 인수는 유효한 css 속성 이어야 합니다.');
+    
+    if(!value) throw new Error('setCss 함수의 세 번째 인수는 필수 입력 값 입니다.');
+
+    node.style[prop] = value;
+
+  }
+
+  function getCss(node,prop){
+
+    if(typeof node === 'string'){
+      node = document.querySelector(node);
+    }
+
+    if(!(prop in document.body.style)) {
+      throw new ReferenceError('getCss 함수의 두 번째 인수는 유효한 css 속성 이어야 합니다.');
+    }
+
+    return getComputedStyle(node)[prop]
+
+  }
+
+  function css(node,prop,value){
+    return !value ? getCss(node,prop) : setCss(node,prop,value);
+  }
+
+  return css
+
+})()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
