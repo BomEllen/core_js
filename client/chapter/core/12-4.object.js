@@ -55,11 +55,16 @@ const total = shopOrder.totalPrice();
 
 // 일반 함수 (문/식)의 this vs. 화살표 함수 식의 this
 
+
+// 너 tiems에 id랑 text랑 link만 넣어야 한다?
+
+
 const navigationMenu = {
   name: '글로벌 내비게이션',
   items: [
     { id: 'link-g', text: 'Google', link: 'https://google.com' },
     { id: 'link-n', text: 'Naver', link: 'https://naver.com' },
+    
   ],
   getItem(index) {
     return this.items[index];
@@ -68,6 +73,12 @@ const navigationMenu = {
     this.items.push(newItem);
   },
 };
+
+navigationMenu.addItem({
+  name: 'link-l',
+  text: 'lycos',
+  url: 'http://lycos.co.kr'
+})
 
 
 
