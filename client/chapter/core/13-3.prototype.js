@@ -75,11 +75,13 @@ class Todo {
 }
 
 
+
 const todo = new Todo({
   input: '.todo',
   button: '.btn',
   renderPlace: '.todoList'
 })
+
 
 
 const todo2 = new Todo({

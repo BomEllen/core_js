@@ -33,6 +33,7 @@ function first(x){
 const a = first(10);
 
 
+a(3)
 
 
 
