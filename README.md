@@ -56,15 +56,16 @@
 - [x] object (method and this) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/12-4.object.js)
 - ---
 ## Prototype
-- [x] prototype (프로토타입의 상속) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/13.prototype.js)
-- [x] prototype (클래스) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/13.classes.js)
+- [x] prototype (프로토타입의 상속) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/13-1.prototype.js)
+- [x] prototype (클래스) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/13-2.classes.js)
+- [x] prototype (클래스 TODO) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/13-3.classes.js)
 
 
 
 ---
 ## Closure
-- [ ] Closure (클로저) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/14-1.closure.js)
-- [ ] Closure (시나리오) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/14-2.closure.js)
+- [x] Closure (클로저) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/14-1.closure.js)
+- [x] Closure (시나리오) [바로가기](https://github.com/simseonbeom/core_js/blob/01.core/client/chapter/core/14-2.closure.js)
 
 
 
