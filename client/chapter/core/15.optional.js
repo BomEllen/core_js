@@ -80,6 +80,8 @@ const t = setTimeout(()=>{
 
 },5000)
 
+// clearTimeout(t)
+
 
 button?.addEventListener('click',()=>{
   console.log('clicked!!!');
@@ -97,6 +99,7 @@ let count = 0;
   
 //   if(count >= 500){
 //     clearInterval(c)
+//     clearTimeout(c)
 //   }
   
 // },0)
