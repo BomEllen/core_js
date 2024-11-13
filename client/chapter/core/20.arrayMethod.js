@@ -284,8 +284,6 @@ const _reduce = (f,acc,i) => {
 
 const t = _reduce((acc,cur) => acc + cur.price, products)
 
-
-
 const add = (a,b) => a + b;
 
 
