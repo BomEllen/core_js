@@ -57,8 +57,8 @@ const span = document.querySelectorAll('span');
 
 span.forEach((elem,index)=>{
 
-  elem.addEventListener('click',function() {
-    
+  elem.addEventListener('click',(e) => {
+    // e.currentTarget
     this.style.color = 'orange';
 
     console.log( index );
@@ -105,6 +105,7 @@ const sort = people.sort(compare)
 // toReversed
 // toSpliced
 // map
+// filter
 
 const map = people.map((user) => user.job)
 
@@ -188,8 +189,8 @@ const total = people.reduce((acc,cur)=>{
 
 
 
-const template = people.reduce((acc,cur)=>{
-  return acc + `<li class="userCard">${cur.name} , ${cur.age}, ${cur.job}</li>`
+const template = people.reduce((htmlCode,user)=>{
+  return htmlCode + `<li class="userCard">${user.name} , ${user.age}, ${user.job}</li>`
 },'')
 
 
@@ -227,7 +228,7 @@ const _forEach = (f,i) => {
   for( const a of i ) f(a)
 }
 
-_forEach( (item)=>{ },  products )
+_forEach( (item)=>{  },  products )
 
 
 

@@ -95,6 +95,7 @@ const _gen = gen();
 
 
 
+// _gen.next().value
 
 function* idGenerator(){
 
@@ -115,6 +116,10 @@ const id = idGenerator();
 // 5. 비동기 반복 작업
 // 6. 다양한 데이터 소스 통합 (Map,Set)
 
+
+
+// 기능이 많다고 좋은건 아님(배열)
+// 미리 계산해서 보관하는게 아닌, 시스템 입장에서의 메모리 소모 
 
 
 
