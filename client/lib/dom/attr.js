@@ -10,3 +10,5 @@ function getAttr(node,prop){
 
 }
 
+
+getAttr('.about','id')

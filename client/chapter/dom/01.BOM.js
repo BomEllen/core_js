@@ -124,6 +124,7 @@ const { width, height, availWidth, availHeight, orientation } = screen;
 
 const { back, forward, go, length, pushState, replaceState } = history;
 
+// jQuery => spa x + barbar
 
 // Single
 // Page
