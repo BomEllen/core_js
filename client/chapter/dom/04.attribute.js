@@ -72,6 +72,19 @@ console.log( about.dataset.value );
 
 
 
+setAttr('.about','data-name','안녕');
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

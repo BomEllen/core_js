@@ -1,6 +1,5 @@
 
 
-
 function getNode(node,context = document){
   
   if(context.nodeType !== 9) context = document.querySelector(context);
@@ -8,6 +7,7 @@ function getNode(node,context = document){
 
 }
 
+getNode('.about')
 
 
 function getNodes(node,context = document){
