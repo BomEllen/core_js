@@ -12,6 +12,32 @@ const nav = getNode('nav');
 
 
 
+// console.log( nav.className ); // getter
+
+// nav.className = 'navigation' // setter
+
+
+// console.log( nav.classList );
+
+
+// nav.classList.add('hello');
+// nav.classList.remove('hello');
+
+// console.log( nav.classList.contains('navigation') );
+// nav.classList.toggle('is-active')
+
+
+
+
+
+
+
+// addClass(nav,'a')
+// addClass(nav,['a','b','c'])
+// addClass(nav,'a,b,c,d')
+// addClass(nav,{first:'a',second:'b'}) // 값만 클래스로 들어갈 수 있게
+
+
 /* 스타일 변경 방법 --------------------------------------------------------- */
 
 // - style.cssText - "style" 속성 전체에 대응하므로 스타일 전체에 대한 문자열 저장
@@ -34,13 +60,6 @@ const nav = getNode('nav');
 
 
 
-
-
-// getCss() // getter
-
-// setCss() // setter
-
-// css()
 
 
 
