@@ -8,3 +8,51 @@ function getAttr(node, prop) {
 
   return node.getAttribute(prop);
 }
+
+
+function setAttr(node, prop, value) {
+  if (isString(node)) node = getNode(node);
+  if (!isString(prop))
+    throw typeError('setAttr 함수의 두 번째 인수는 문자 타입 이어야 합니다.');
+  if (isUndefined(value) || value === '') {
+    node.removeAttribute(prop);
+    return;
+  }
+
+  if (prop.startsWith('data')) {
+    prop = prop.slice(5);
+    node.dataset[prop] = value;
+    return;
+  }
+
+  node.setAttribute(prop, value);
+}
+
+
+
+
+//attr('.about', 'id')  // getter
+// attr('.about', 'id', 'star')  // setter
+// 위 값이 나오도록 게터와 세터 합친 함수 만들기
+// function attr(node,prop,value){
+  
+//   if(!value){
+//     return getAttr(node,prop)
+//   }else{
+//     setAttr(node,prop,value)
+//   }
+// }
+
+
+
+// 위 함수를 에로우 펑션으로
+
+  const attr = (node, prop, value) =>
+  !value ? getAttr(node, prop) : setAttr(node, prop, value);
+
+
+
+
+
+
+
