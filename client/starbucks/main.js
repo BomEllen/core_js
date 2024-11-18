@@ -1,0 +1,33 @@
+
+
+
+
+
+const aList = document.querySelectorAll('nav a');
+
+
+console.log( aList );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
