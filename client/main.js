@@ -6,6 +6,7 @@
 
 // import { getNode as $, getNodes } from './lib/dom/getNode.js';
 // import { insertLast } from './lib/dom/insert.js';
+
 // import clearContents from "./lib/dom/clearContents.js";
 
 
@@ -28,7 +29,6 @@ import {
 // 5. result에 출력하기 
 
 
-/* global clearContents */
 
 const first = $('#firstNumber');
 const second = $('#secondNumber');
@@ -41,7 +41,6 @@ function handleInput(){
   const firstValue = Number(first.value);
   const secondValue = +second.value;
   const total = firstValue + secondValue;
-
   
   clearContents(result);
   insertLast(result,total)
