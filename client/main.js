@@ -1,112 +1,59 @@
 
-
-
-// named export           =>  import { getNode as $, insertLast } from '..'
-// default export         =>  import ... from '..'
-
-// import { getNode as $, getNodes } from './lib/dom/getNode.js';
-// import { insertLast } from './lib/dom/insert.js';
-
-// import clearContents from "./lib/dom/clearContents.js";
-
-
-
+import data from './data/data.js';
 import { 
-  getNode as $, 
-  getNodes, 
-  typeError, 
+  getRandom, 
   insertLast, 
-  clearContents, 
+  getNode as $, 
+  clearContents,
  } from './lib/index.js'
 
 
 
 
- function phase1(){
-  // 1. input 선택하기
-  // 2. input 이벤트 바인딩
-  // 3. input의 value 값 가져오기
-  // 4. 숫자 더하기 
-  // 5. result에 출력하기 
+// [phase-1]
+
+// 1. 주접 떨기 버튼을 클릭 하는 함수
+//   - 주접 떨기 버튼 가져오기
+//   - 이벤트 연결
+
+// 2. input 값 가져오기 
+//   - 콘솔에 출력
 
 
-
-  const first = $('#firstNumber');
-  const second = $('#secondNumber');
-  const result = $('.result');
-  const clear = $('#clear');
-
-
-
-  function handleInput(){
-    const firstValue = Number(first.value);
-    const secondValue = +second.value;
-    const total = firstValue + secondValue;
-    
-    clearContents(result);
-    insertLast(result,total)
-    
-  }
-
-  function handleClear(e){
-    e.preventDefault();
-
-    clearContents(first)
-    clearContents(second)
-    result.textContent = '-'
-
-  }
-
-
-  first.addEventListener('input',handleInput)
-  second.addEventListener('input',handleInput)
-  clear.addEventListener('click',handleClear)
-
-
- }
+const submit = $('#submit');
+const nameField = $('#nameField');
+const result = $('.result');
 
 
 
 
+// 3. data 함수에서 주접 1개 꺼내기
+//    - n번째 random 주접을 꺼내기
+//    - Math.random()
 
- function phase2(){
-
-  const calculator = $('.calculator');
-  const result = $('.result');
-  const clear = $('#clear');
-  const numberInputs = [...document.querySelectorAll('input:not(#clear)')]
-
-
-  function handleInput(){
-    
-    const total = numberInputs.reduce((acc,cur)=> acc + Number(cur.value),0);
-    
-    clearContents(result);
-    insertLast(result,total);
-  }
+// 4. result에 랜더링하기
+//    - insertLast()
 
 
-  function handleClear(e){
-    e.preventDefault();
 
-    numberInputs.forEach(clearContents);
-    result.textContent = '-';
+function handleSubmit(e){
+  e.preventDefault();
+  const name = nameField.value;
+  const list = data(name);
+  const pick = list[getRandom(list.length)];
 
-  }
 
-
-  calculator.addEventListener('input',handleInput)
-  clear.addEventListener('click',handleClear)
- }
+  clearContents(result);
+  insertLast(result, pick)
+  
+  
+  
+}
 
 
 
 
-
-
- phase2()
-
-
+submit.addEventListener('click',handleSubmit);
 
 
 
