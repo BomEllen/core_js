@@ -9,6 +9,7 @@ const types = {
   isNull: true,
   isUndefined: true,
   isFunction: true,
+
 };
 
 const dom = {
@@ -25,6 +26,7 @@ export default [
         ...globals.node,
         ...types,
         ...dom,
+        gsap:true,
       },
     },
     rules: {
