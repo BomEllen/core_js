@@ -1,6 +1,6 @@
 
 
-const END_POINT = 'https://jsonplaceholder.typicode.com/users';
+const END_POINT = 'https://jsonplaceholder.typicode.com/users/2';
 
 // [readyState]
 // 0 : uninitialized
@@ -21,20 +21,21 @@ function xhr({
   body = null,
   headers = {
     'Content-Type':'application/json',
-    'Access-Control-Allow-Origin':'*'
+    'Access-Control-Allow-Origin':'*',
   }
 } = {}){
    
   
   const xhr = new XMLHttpRequest();
 
-  
   xhr.open(method,url);
 
-  // 객체의 key, value를 분리 (Object.entries)
-  // 반복문 (forEach)
 
-  // xhr.setRequestHeader(key,value)
+  if(!method === 'DELETE'){
+    Object.entries(headers).forEach(([k,v])=>{
+      xhr.setRequestHeader(k,v)
+    })
+  }
 
   xhr.addEventListener('readystatechange',()=>{
     const {status,response,readyState} = xhr;
@@ -62,18 +63,61 @@ const obj = {
 }
 
 
-xhr({
+// xhr({
+//   method:"DELETE",
+//   url: END_POINT,
+//   success: (data)=>{
+//     console.log( data );
+//   },
+//   fail: ()=>{},
+// })
 
-  url: END_POINT,
-  success: (data)=>{
+
+
+
+xhr.get = (url,success,fail) => {
+  xhr({ url, success, fail })
+}
+
+
+xhr.post = (url,body,success,fail) => {
+  xhr({
+    method:'POST',
+    url,
+    body,
+    success,
+    fail
+  })
+}
+
+xhr.put = (url,body,success,fail) => {
+  xhr({
+    method:'PUT',
+    url,
+    body,
+    success,
+    fail
+  })
+}
+
+xhr.delete = (url,success,fail) => {
+  xhr({
+    method:'DELETE',
+    url,
+    success,
+    fail
+  })
+}
+
+
+
+
+xhr.delete(
+  END_POINT,
+  (data)=>{
     console.log( data );
-  },
-  fail: ()=>{},
-
-  
-})
-
-
+  }
+)
 
 
 
