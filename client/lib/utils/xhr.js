@@ -12,6 +12,9 @@ const END_POINT = 'https://jsonplaceholder.typicode.com/users/2';
 
 
 
+/* -------------------------------------------- */
+/*                   callback                   */
+/* -------------------------------------------- */
 
 function xhr({
   method = 'GET',
@@ -79,7 +82,6 @@ xhr.get = (url,success,fail) => {
   xhr({ url, success, fail })
 }
 
-
 xhr.post = (url,body,success,fail) => {
   xhr({
     method:'POST',
@@ -112,12 +114,69 @@ xhr.delete = (url,success,fail) => {
 
 
 
-xhr.delete(
-  END_POINT,
-  (data)=>{
-    console.log( data );
-  }
-)
+// xhr.delete(
+//   END_POINT,
+//   (data)=>{
+//     console.log( data );
+//   }
+// )
+
+
+
+
+
+
+
+
+/* -------------------------------------------- */
+/*                    promise                   */
+/* -------------------------------------------- */
+
+
+
+
+function xhrPromise(options){
+
+
+  const {method,url} = options;
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open(method,url);
+  xhr.send();
+  
+  return new Promise((resolve,reject)=>{
+     xhr.addEventListener('readystatechange',()=>{
+      if(xhr.readyState === 4){ // complete
+        if(xhr.status >= 200 && xhr.status < 400){
+          //
+          resolve(JSON.parse(xhr.response))
+        }else{
+          //
+          reject()
+        }
+      }
+     })
+  })
+}
+
+
+
+xhrPromise({
+  method:'GET',
+  url:END_POINT
+})
+.then((res)=>{
+  console.log( res );
+  
+})
+
+
+
+
+
+
+
 
 
 
