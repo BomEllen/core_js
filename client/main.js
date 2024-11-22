@@ -3,11 +3,13 @@
 
 import { 
   tiger, 
+  delayP,
   getNode,
   insertLast, 
   changeColor,
   renderSpinner,
   renderUserCard,
+  renderEmptyCard,
  } from "./lib/index.js";
 
 
@@ -25,7 +27,6 @@ renderSpinner(userCardInner)
 
 async function renderUserList(){
 
-
   try{
 
     const response = await tiger.get(END_POINT);
@@ -33,20 +34,26 @@ async function renderUserList(){
     // getNode('.loadingSpinner').remove()
 
     gsap.to('.loadingSpinner',{
-      opacity:0
+      opacity:0,
+      onComplete(){
+        this._targets[0].remove()
+      }
     })
 
     const data = response.data;
   
     
+    await delayP(1000)
   
     
-    data.forEach((user)=> renderUserCard(userCardInner,user))
+    data.forEach((user)=> {
+      
+      renderUserCard(userCardInner,user)
+    })
   
     changeColor('.user-card');
   
     gsap.from('.user-card',{
-      delay:1,
       x:-100,
       opacity:0,
       stagger:{
@@ -58,7 +65,8 @@ async function renderUserList(){
   
   }
   catch{
-    console.log('error!');
+
+    renderEmptyCard(userCardInner)
     
   }
 
@@ -74,6 +82,41 @@ renderUserList()
 
 
 // 2. fetch 데이터 유저의 이름만 콘솔에 출력 
+
+
+function handleDeleteCard(e){
+  const button = e.target.closest('button');
+
+  if(!button) return;
+
+  const article = button.parentElement;
+  const index = article.dataset.index.slice(5);
+  
+  tiger.delete(END_POINT)
+  
+
+
+}
+
+userCardInner.addEventListener('click',handleDeleteCard)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
