@@ -16,7 +16,7 @@ const defaultOptions = {
   }
 }
 
-const tiger = async (options) =>{
+export const tiger = async (options) =>{
 
   const {url,...rest} = {
     ...defaultOptions,
@@ -84,13 +84,13 @@ tiger.delete = (url,options) => {
 
 
 
-(async function(){
+// (async function(){
 
-  const response = await tiger.delete(END_POINT+'/1');
+//   const response = await tiger.delete(END_POINT+'/1');
 
-  console.log(response.data);
+//   console.log(response.data);
 
-})()
+// })()
 
 
 
