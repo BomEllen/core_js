@@ -92,7 +92,9 @@ function handleDeleteCard(e){
   const article = button.parentElement;
   const index = article.dataset.index.slice(5);
   
-  tiger.delete(END_POINT)
+  tiger.delete(`${END_POINT}/${index}`).then(()=>{
+    alert('삭제가 완료됐습니다.')
+  })
   
 
 

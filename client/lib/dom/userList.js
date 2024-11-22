@@ -134,6 +134,7 @@ function createEmptySVG(emptyMessage = '데이터 정보를 불러오지 못했�
 export function renderUserCard(target, data) {
   insertLast(target, createUserCard(data));
 }
+
 // 2-2. 로딩 스피너 태그를 랜더링 함수
 export function renderSpinner(target) {
   insertLast(target, createSpinner());
