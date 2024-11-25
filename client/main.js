@@ -7,6 +7,7 @@ import {
   getNode,
   insertLast, 
   changeColor,
+  clearContents,
   renderSpinner,
   renderUserCard,
   renderEmptyCard,
@@ -14,18 +15,20 @@ import {
 
 
 
-const END_POINT = 'https://jsonplaceholder.typicode.com/users'
+const END_POINT = 'http://localhost:3000/users'
 
 
 const userCardInner = getNode('.user-card-inner');
 
 
 
-renderSpinner(userCardInner)
+
 
 
 
 async function renderUserList(){
+
+  renderSpinner(userCardInner)
 
   try{
 
@@ -57,7 +60,7 @@ async function renderUserList(){
       x:-100,
       opacity:0,
       stagger:{
-        amount:1,
+        each:0.1,
         from:'start'
       }
     })
@@ -84,6 +87,7 @@ renderUserList()
 // 2. fetch 데이터 유저의 이름만 콘솔에 출력 
 
 
+
 function handleDeleteCard(e){
   const button = e.target.closest('button');
 
@@ -94,9 +98,16 @@ function handleDeleteCard(e){
   
   tiger.delete(`${END_POINT}/${index}`).then(()=>{
     alert('삭제가 완료됐습니다.')
-  })
-  
 
+
+    // userCardInner.textContent = '';
+
+    clearContents(userCardInner)
+    renderUserList()
+
+    
+
+  })
 
 }
 
