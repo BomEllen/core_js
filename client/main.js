@@ -8,7 +8,7 @@ import { getNode, setStorage, getStorage, deleteStorage } from "./lib/index.js";
 const textField = getNode('#textField');
 const clearButton = getNode('button[data-name="clear"]');
 
-
+//
 
 
 // 1. 인풋 이벤트 바인딩
